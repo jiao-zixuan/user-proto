@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option go_package = "../proto";
+
+message AuthRequest { //用户认证请求
+  string mobile = 1;
+}
+
+message  CreateUserRequest { //用户添加请求
+  string mobile = 1; //手机号
+  string password  = 2; //密码
+}
+service user {
+  rpc AuthUser(AuthRequest) returns (UserInfo); //用户认证
+  rpc CreateUser(CreateUserRequest) returns (UserInfo); //用户添加
+}
+
+message UserInfo {
+  uint32   ID = 1;
+  string   CreatedAt = 7;
+  string  UpdatedAt = 8;
+  string  DeletedAt = 9;
+  string mobile = 2;
+  string password = 3;
+  string nickName = 4;
+  string email =5; //邮箱
+  uint32 status = 6; //状态
+}
