@@ -1,4 +1,4 @@
-module github.com/jiao-zixuan/user-proto.git
+module github.com/jiao-zixuan/user-proto
 
 go 1.22.4
 
